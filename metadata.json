@@ -1,0 +1,8 @@
+{
+  "name": "Remix EduAssist AI",
+  "description": "An accessible, AI-powered platform for teachers to visualize lectures, generate personalized homework, and manage parent reporting efficiently.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

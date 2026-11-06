@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+}
+
+/* Custom smooth styling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styling for parent reports & homework worksheets */
+@media print {
+  header, footer, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Robot Lively Animation Keyframes */
+@keyframes robotFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-1.2deg) scale(1.02);
+  }
+  75% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+@keyframes robotShadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.75);
+    opacity: 0.25;
+  }
+}
+
+@keyframes robotGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.08);
+  }
+}
+
+.animate-robot-float {
+  animation: robotFloat 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-robot-shadow {
+  animation: robotShadow 4.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-robot-glow {
+  animation: robotGlow 4.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
